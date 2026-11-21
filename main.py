@@ -1,9 +1,8 @@
-import requests
-from bs4 import BeautifulSoup
+import sys
+sys.dont_write_bytecode = True #чтобы пайкесш не создавался пока
 
-class Parse:
-    def __init__(self, url:str):
-        self.url = url
-        self.response = requests.get(url)
-        self.soup = BeautifulSoup(self.response.text,"html.parser")
-        self.data = None
+from terminal.init import Terminal
+
+
+config = Terminal().run()
+print(config)
